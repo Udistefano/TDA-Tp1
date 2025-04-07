@@ -92,7 +92,6 @@ def calcular_secuencia(n, secuencia, cota_superior, soluciones):
 
             secuencia.append(nueva_suma)
             calcular_secuencia(n, secuencia, cota_superior, soluciones)
-            secuencia.pop()
             # backtracking
      
 
