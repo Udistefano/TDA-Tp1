@@ -67,9 +67,9 @@ def suma_encadenada(n):
     soluciones = []
     secuencia = [1, 2]
 
-    n_es_impar = (n % 2 != 0)
+    """n_es_impar = (n % 2 != 0)
     if n_es_impar:
-        secuencia.append(3)
+        secuencia.append(3)"""
 
     calcular_secuencia(n, secuencia, cota_greedy, soluciones)      
     return soluciones[-1]
@@ -77,23 +77,24 @@ def suma_encadenada(n):
 
 def calcular_secuencia(n, secuencia, cota_superior, soluciones):
     if secuencia[-1] == n:
-        if len(soluciones) == 0 or len(secuencia) < len(soluciones[-1]):
+        if len(soluciones) == 0 or len(secuencia) <= len(soluciones[-1]):
             soluciones.append(secuencia[:])
         return soluciones
     
-    if len(secuencia) >= cota_superior:      # poda
-        return               
+    if len(secuencia) > cota_superior:      # poda
+        return             
     
     for i in range(len(secuencia) - 1, -1, -1):
         for j in range(i, -1, -1):
             nueva_suma = secuencia[i] + secuencia[j] 
-            if nueva_suma > n or nueva_suma in secuencia:            # si no es valido
+            if nueva_suma > n or nueva_suma in secuencia or nueva_suma < secuencia[-1]:            # si no es valido
                 continue              # pruebo con un valor de j más pequeño
 
             secuencia.append(nueva_suma)
             calcular_secuencia(n, secuencia, cota_superior, soluciones)
+            secuencia.pop()
             # backtracking
      
 
-print(suma_encadenada(4001))
-#[1, 2, 4, 8, 16, 32]
+print(suma_encadenada(1500))
+
