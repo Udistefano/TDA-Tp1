@@ -1,4 +1,4 @@
-def calcular_fuerzas(q):
+def calcular_fuerzas(q, c=0.3):
     def divide_conquista(q, left, right):
         if left == right:
             return [0]  # fuerza de una sola partícula es 0
@@ -16,7 +16,7 @@ def calcular_fuerzas(q):
         for i in range(left, mid + 1):
             for j in range(mid + 1, right + 1):
                 d = j - i
-                fuerza = (q[i] * q[j]) / (d * d)
+                fuerza = c * (q[i] * q[j]) / (d * d)
                 # Fuerza sobre i por j (izquierda ← derecha)
                 F_cruzadas_izq[i - left] += -fuerza  # dirección opuesta
                 # Fuerza sobre j por i (derecha ← izquierda)

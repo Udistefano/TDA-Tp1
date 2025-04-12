@@ -14,3 +14,7 @@ def carga_combustible(distancias_estaciones, K=7):
             km_actual += distancia
             i += 1
     return estaciones_convenientes
+
+
+
+print(carga_combustible([3, 5, 7, 2]))

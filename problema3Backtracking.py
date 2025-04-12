@@ -11,36 +11,6 @@ Desarrollar un algoritmo de Backtracking para calcular una suma encadenada de lo
 mínima para un entero positivo n
 '''
 
-# Con la lista de secuencia actual, yo solo puedo usar sumas de números de la secuencia actual que tengo armada. ¿Me conviene usar siempre la mayor suma de la secuencia actual sin pasarme de n?
-
-def suma_encadenada_NOGREEDY(n):
-    secuencia = [1, 2]           # lista vacia con el 1 y el 2
-    n_es_impar = (n % 2 != 0)
-    if n_es_impar:
-        secuencia.append(3)
-        
-    while secuencia[-1] < n:
-        nueva_suma = secuencia[-1] + secuencia[-1]
-
-        if nueva_suma > n:
-            encontrado = False
-
-            for i in range(len(secuencia) - 1, -1, -2):        # en reversa, de 2 en 2
-                for j in range(i, -1, -2):
-                    suma_alternativa = secuencia[i] + secuencia[j]
-
-                    if suma_alternativa <= n and suma_alternativa not in secuencia:                       
-                        secuencia.append(suma_alternativa)
-                        encontrado = True
-                        break                          # salgo del for j
-
-                if encontrado:               # salgo del for i
-                    break
-            
-        else: secuencia.append(nueva_suma)
-    
-    return len(secuencia)
-
 
 # exponencial btw
 def suma_encadenada_greedy(n):
