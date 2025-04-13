@@ -33,4 +33,4 @@ def _calcular_fuerzas_coulomb(inicio, fin, particulas, fuerzas, c):
             fuerzas[i] -= fuerza # fuerza sobre i desde j (j < i)
 
 
-print(calcular_fuerzas_coulomb([1, -1, 2, -2]))
+print(calcular_fuerzas_coulomb([1, -1]))

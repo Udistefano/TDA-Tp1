@@ -33,6 +33,6 @@ def calcular_fuerzas(q, c=0.3):
     return divide_conquista(q, 0, len(q) - 1)
 
 # Ejemplo: 4 partículas con cargas [+1, -1, +2, -2]
-q = [1, -1, 2, -2]
+q = [1, -1]
 fuerzas = calcular_fuerzas(q)
 print(fuerzas)
