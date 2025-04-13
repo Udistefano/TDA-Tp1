@@ -18,13 +18,15 @@ def carga_agua(distancias_estaciones, autonomia):
         if tanque < distancia:
             estaciones_convenientes.append(km_actual)
             tanque = autonomia
+        if distancia > autonomia:
+            raise ValueError(f"La distancia entre estaciones ({distancia} km) excede la autonomía ({autonomia} km).")
         else:
             tanque -= distancia
             km_actual += distancia
             i += 1
     return estaciones_convenientes
 
-distancias = [5, 3, 3, 4, 7, 2]
+distancias = [5, 3, 3, 4, 7, 10]
 
 print(carga_agua(distancias, 7))
 
