@@ -12,3 +12,5 @@ def calcular_fuerzas(q, C=0.3):
             else:
                 F[j] -= fuerza
     return F
+
+print(calcular_fuerzas([1, -1]))
