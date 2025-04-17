@@ -4,7 +4,7 @@ import time
 import csv
 # se calculan los resultados y tiempos para el problema 2.
 
-from problema3_con_pop import suma_encadenada
+from problema3 import suma_encadenada
 
 CARPETA_CASOS = "casos_problema_3"
 CARPETA_RESULTADOS = os.path.join(CARPETA_CASOS, "resultados")

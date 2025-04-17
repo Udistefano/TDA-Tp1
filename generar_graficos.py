@@ -35,14 +35,18 @@ def graficar_ej1(path_csv):
 def graficar_ej2(path_csv):
     tamanios = []
     tiempos = []
-
+    datos = []
     with open(path_csv, 'r') as f:
         reader = csv.DictReader(f)
         for fila in reader:
-            tamanios.append(int(fila['Tamaño']))
-            tiempos.append(float(fila['Tiempo']))
+            datos.append((int(fila['Tamaño']),float(fila['Tiempo'])))
 
     fig, ax = plt.subplots(figsize=(10, 5))
+    datos =  sorted(datos, key=lambda x: x[0])
+    for tamanio, tiempo in datos:
+       tamanios.append(tamanio)
+       tiempos.append(tiempo)
+
     ax.plot(tamanios, tiempos, marker='o', label='Random', color='mediumblue')
     ax.set_xlabel('Tamaño (N)')
     ax.set_ylabel('Tiempo (s)')
@@ -56,14 +60,20 @@ def graficar_ej2(path_csv):
 def graficar_ej3(path_csv):
     tamanios = []
     tiempos = []
-
+    datos = []
     with open(path_csv, 'r') as f:
         reader = csv.DictReader(f)
         for fila in reader:
-            tamanios.append(int(fila['n']))
-            tiempos.append(float(fila['Tiempo (s)']))
-
+            datos.append((int(fila['n']), fila['Tiempo (s)']))
+    
     fig, ax = plt.subplots(figsize=(10, 5))
+
+
+    datos =  sorted(datos, key=lambda x: x[0])
+    for tamanio, tiempo in datos:
+       tamanios.append(tamanio)
+       tiempos.append(tiempo)
+       
     ax.plot(tamanios, tiempos, marker='o', label='Backtracking', color='darkgreen')
     ax.set_xlabel('n')
     ax.set_ylabel('Tiempo (s)')
