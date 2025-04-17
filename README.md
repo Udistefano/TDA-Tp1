@@ -23,3 +23,6 @@ Link el informe: https://docs.google.com/document/d/1b2v9n2Y4WBs9FhSBe4Ahn-y7mSz
     3. Problema 3: python3 calcular_resulados_problema_3.py
 
     Los resultados se guardan dentro de la carpeta llamada "casos_problema_n" siendo n 1, 2 o 3 según corresponda, en una subcarpeta llamada "resultados", y ademas se guardan los tiempos de ejecución en un archivo csv llamado "tiempos_problema_n.csv"
+
+### Graficos
+    Se pueden generar los graficos basados en los resultados de los sets de pruebas ejecutando: python3 generar_graficos.py, los mismos se guardan en una carpeta llamada "graficos"
