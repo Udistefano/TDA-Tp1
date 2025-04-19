@@ -1,5 +1,11 @@
 # TDA-Tp1
 Link el informe: https://docs.google.com/document/d/1b2v9n2Y4WBs9FhSBe4Ahn-y7mSzInUWC3ChMgL73RT4/edit?tab=t.0
+(también está adjunto en el zip)
+
+Lenguaje de programación: Python
+No hay ninguna biblioteca especial que se utilice, y debería ser compatible con cualquier versión de Python 3.
+Cada ejercicio individual se ejecuta como cualquier programa de Python.
+
 
 
 ### Los algoritmos de cada problema se encuentran en los siguientes archivos:
